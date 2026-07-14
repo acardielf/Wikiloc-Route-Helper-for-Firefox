@@ -8,7 +8,7 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "wikiloc-route-helper@example.com",
+      "id": "wikiloc-route-helper@acardielf.github.io",
       "strict_min_version": "142.0",
       "data_collection_permissions": {
         "required": ["none"]

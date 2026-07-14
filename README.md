@@ -137,9 +137,12 @@ extensiones **firmadas por Mozilla**. Opciones:
    Nightly permiten desactivar la comprobación con
    `xpinstall.signatures.required = false` en `about:config`.
 
-> Antes de firmar o publicar, cambia el `id` provisional
-> (`browser_specific_settings.gecko.id`) del `manifest.json` por uno propio,
-> por ejemplo `wikiloc-route-helper@tudominio.com`.
+> El id de la extensión (`browser_specific_settings.gecko.id`) es
+> `wikiloc-route-helper@acardielf.github.io` y **no debe cambiarse**: AMO lo
+> usa como identidad permanente, y las futuras versiones deben mantenerlo
+> para que Firefox las instale como actualización. Pasa las credenciales de
+> firma mediante las variables de entorno `WEB_EXT_API_KEY` y
+> `WEB_EXT_API_SECRET`, nunca como argumentos en la línea de comandos.
 
 ## Consideraciones legales
 
