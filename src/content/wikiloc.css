@@ -1,0 +1,87 @@
+/*
+ * Wikiloc Route Helper - estilos
+ * Copyright (C) 2026  Ángel Cardiel
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ *
+ * El panel solo existe cuando la extensión está activada (lo inyecta y
+ * oculta el content script); la marca de color de las fichas se limpia
+ * también desde el script, pero se protege igualmente con .wlx-enabled.
+ */
+
+.wlx-panel {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  font: 13px/1.4 sans-serif;
+  color: #333;
+}
+
+.wlx-panel__title {
+  font-weight: 700;
+  color: #2e7d32;
+}
+
+.wlx-panel__btn {
+  padding: 5px 10px;
+  border: 1px solid #2e7d32;
+  border-radius: 5px;
+  background: #fff;
+  color: #2e7d32;
+  font: inherit;
+  cursor: pointer;
+}
+
+.wlx-panel__btn:hover {
+  background: #e8f5e9;
+}
+
+.wlx-panel__btn--active {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.wlx-panel__btn--active:hover {
+  background: #1b5e20;
+}
+
+.wlx-panel__wpts {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Waypoints de las rutas mostradas (pines amarillos): L.WklWaypoint los
+   crea con L.icon, que genera un <img> con la clase
+   map-leaflet-marker-waypoint-id-<id>. Los waypoints populares del propio
+   mapa (pines negros) comparten esa clase pero son <div> (L.divIcon), así
+   que restringir a img los deja visibles. */
+html.wlx-hide-wpts img[class*="map-leaflet-marker-waypoint-id-"] {
+  display: none !important;
+}
+
+/* Franja con el color del trazado en la ficha correspondiente. El
+   box-shadow interior no altera el layout de la lista. */
+html.wlx-enabled .trail.wlx-trace-tag {
+  box-shadow: inset 6px 0 0 var(--wlx-trace-color);
+}
+
+/* Resaltado bidireccional: al pasar el ratón por la ficha se engorda su
+   trazado, y al pasar por el trazado se enmarca su ficha. */
+html.wlx-enabled path.wlx-trace-highlight {
+  stroke-width: 8px !important;
+}
+
+html.wlx-enabled .trail.wlx-card-highlight {
+  outline: 3px solid var(--wlx-trace-color, #2e7d32);
+  outline-offset: -3px;
+}

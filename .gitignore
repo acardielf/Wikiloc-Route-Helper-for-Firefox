@@ -1,0 +1,6 @@
+web-ext-artifacts/
+*.xpi
+node_modules/
+.amo-api-key
+.amo-upload-uuid
+.idea/
