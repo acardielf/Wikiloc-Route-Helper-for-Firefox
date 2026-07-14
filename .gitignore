@@ -1,6 +1,18 @@
+# Artefactos de compilación y firma
 web-ext-artifacts/
 *.xpi
-node_modules/
 .amo-api-key
 .amo-upload-uuid
+
+# Dependencias
+node_modules/
+
+# IDEs y editores
 .idea/
+.vscode/
+*.swp
+*~
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

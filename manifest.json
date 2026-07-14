@@ -3,7 +3,7 @@
   "name": "Wikiloc Route Helper",
   "version": "0.1.0",
   "description": "Mejora la visualización de rutas en Wikiloc mediante ajustes locales de la interfaz. No afiliada a Wikiloc.",
-  "homepage_url": "https://github.com/acardielf/wikiloc-extension-firefox",
+  "homepage_url": "https://github.com/acardielf/Wikiloc-Route-Helper-for-Firefox",
   "author": "Ángel Cardiel",
 
   "browser_specific_settings": {
